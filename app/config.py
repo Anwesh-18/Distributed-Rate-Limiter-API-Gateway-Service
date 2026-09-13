@@ -1,4 +1,4 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class TierLimit:
     def __init__(self, requests: int, window_seconds: int):
@@ -14,8 +14,7 @@ class Settings(BaseSettings):
 
     active_algorithm: str = "fixed_window"
 
-    class Config:
-        env_file = ".env"
+    model_config = SettingsConfigDict(env_file=".env")
 
 settings = Settings()
 
