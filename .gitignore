@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+.venv/
+
+.env
+
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+
+.locust_history
+
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+docker-compose.override.yml
+# *.log

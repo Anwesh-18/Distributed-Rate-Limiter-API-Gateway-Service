@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  gateway:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - DOWNSTREAM_URL=http://downstream:9000
+      - JWT_SECRET=dev-secret-change-me
+      - ACTIVE_ALGORITHM=fixed_window
+    depends_on:
+      - redis
+      - downstream
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  downstream:
+    build: ./downstream
+    ports:
+      - "9000:9000"
