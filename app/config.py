@@ -7,7 +7,7 @@ class TierLimit:
 
 class Settings(BaseSettings):
     redis_url: str = "redis://redis:6379/0"
-    jwt_secret: str = "dev-secret-change-me"
+    jwt_secret: str = "secret_key"
     jwt_algorithm: str = "HS256"
 
     downstream_url: str = "http://downstream:9000"

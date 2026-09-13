@@ -33,7 +33,7 @@ async def proxy(path: str, request: Request, client: AuthedClient = Depends(get_
             detail=f"Rate limit exceeded for tier '{client.tier}'. Try again shortly.",
         )
 
-
+    
     downstream_url = f"{settings.downstream_url}/{path}"
     body = await request.body()
 
