@@ -40,8 +40,4 @@ async def test_fixed_window_different_users_independent(redis_client):
     # user-b should have their own independent limit, unaffected by user-a
     assert await limiter.is_allowed("ratelimit:user-b", limit=3, window_seconds=60) is True
 
-# TODO once you implement token_bucket.py and sliding_window.py:
-# write equivalent tests, plus one specifically testing that token bucket
-# allows a burst up to bucket size, and one testing sliding window's
-# accuracy right at the window boundary (this is the case fixed window
-# gets wrong -- prove your sliding window implementation gets it right).
+
